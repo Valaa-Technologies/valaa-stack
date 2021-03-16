@@ -2,7 +2,7 @@
 
 import { EventBase } from "~/raem/events";
 
-import { Authority, AuthorityConnection, EVENT_VERSION } from "~/sourcerer";
+import { Authority, AuthorityConnection, SOURCERER_EVENT_VERSION } from "~/sourcerer";
 import { Proclamation, ProclaimOptions, ProclaimEventResult, MediaInfo, NarrateOptions }
     from "~/sourcerer/api/types";
 
@@ -15,7 +15,7 @@ export default function createValaaTestScheme ({ config, authorityURI, /* parent
     getAuthorityURIFromChronicleURI: () => authorityURI || `valaa-test:`,
 
     obtainAuthorityConfig: () => ({
-      eventVersion: EVENT_VERSION,
+      eventVersion: SOURCERER_EVENT_VERSION,
       isLocallyRecorded: true,
       isPrimaryAuthority: true,
       isRemoteAuthority: false,

@@ -4,7 +4,7 @@ import { Command, EventBase } from "~/raem/events";
 import { getActionFromPassage, Story } from "~/raem/redux/Bard";
 
 import { initializeAspects } from "~/sourcerer/tools/EventAspects";
-import EVENT_VERSION from "~/sourcerer/tools/EVENT_VERSION";
+import SOURCERER_EVENT_VERSION from "~/sourcerer/EVENT_VERSION";
 
 import { dumpObject, generateDispatchEventPath, isPromise } from "~/tools";
 
@@ -30,7 +30,7 @@ export function _composeEventIntoRecitalStory (
     falseProphet: FalseProphet, event: EventBase, dispatchDescription: string, options: Object = {},
 ) {
   const { transactionState, truthConnection } = options;
-  if (!event.aspects) initializeAspects(event, { version: EVENT_VERSION });
+  if (!event.aspects) initializeAspects(event, { version: SOURCERER_EVENT_VERSION });
 
   const transactor = event.meta && event.meta.transactor;
   const operation = event.meta && event.meta.operation;

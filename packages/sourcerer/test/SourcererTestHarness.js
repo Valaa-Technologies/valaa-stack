@@ -14,7 +14,7 @@ import {
   Scribe, Follower,
 } from "~/sourcerer";
 import { obtainAspect } from "~/sourcerer/tools/EventAspects";
-import EVENT_VERSION from "~/sourcerer/tools/EVENT_VERSION";
+import SOURCERER_EVENT_VERSION from "~/sourcerer/EVENT_VERSION";
 
 import SourcererTestAPI from "~/sourcerer/test/SourcererTestAPI";
 import createValaaTestScheme, { TestSourcerer, TestConnection }
@@ -376,7 +376,7 @@ export function createTestMockSourcerer (configOverrides: Object = {}, sourcerer
   return new TestSourcerer({
     authorityURI: "valaa-test:",
     authorityConfig: {
-      eventVersion: EVENT_VERSION,
+      eventVersion: SOURCERER_EVENT_VERSION,
       isLocallyRecorded: true,
       isPrimaryAuthority: true,
       isRemoteAuthority: false,

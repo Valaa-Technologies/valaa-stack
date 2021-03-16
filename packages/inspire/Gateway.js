@@ -21,7 +21,7 @@ import Corpus from "~/raem/Corpus";
 import { qualifiedNamesOf } from "~/tools/namespace";
 
 import upgradeEventTo0Dot2 from "~/sourcerer/tools/event-version-0.2/upgradeEventTo0Dot2";
-import EVENT_VERSION from "~/sourcerer/tools/EVENT_VERSION";
+import { SOURCERER_EVENT_VERSION } from "~/sourcerer";
 import IdentityMediator from "~/sourcerer/FalseProphet/IdentityMediator";
 
 import Engine from "~/engine/Engine";
@@ -625,9 +625,9 @@ export default class Gateway extends FabricEventTarget {
     const { schema, validators, mainReduce, subReduce } = createRootReducer(reducerOptions);
 
     const middlewares = [
-      _createProcessCommandVersionMiddleware(EVENT_VERSION),
+      _createProcessCommandVersionMiddleware(SOURCERER_EVENT_VERSION),
       createProcessCommandIdMiddleware(undefined, schema),
-      createValidateEventMiddleware(validators, EVENT_VERSION, EVENT_VERSION),
+      createValidateEventMiddleware(validators, SOURCERER_EVENT_VERSION, SOURCERER_EVENT_VERSION),
       createBardMiddleware(),
     ];
 

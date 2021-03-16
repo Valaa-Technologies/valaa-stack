@@ -1,6 +1,6 @@
 // @flow
 
-import { Authority, EVENT_VERSION } from "~/sourcerer";
+import { Authority, SOURCERER_EVENT_VERSION } from "~/sourcerer";
 import type { SchemeModule } from "~/sourcerer";
 
 export default function createValaaTransientScheme (/* { parent } */): SchemeModule {
@@ -10,7 +10,7 @@ export default function createValaaTransientScheme (/* { parent } */): SchemeMod
     getAuthorityURIFromChronicleURI: () => `valaa-transient:`,
 
     obtainAuthorityConfig: (/* chronicleURI: string, authorityPreConfig: Object */) => ({
-      eventVersion: EVENT_VERSION,
+      eventVersion: SOURCERER_EVENT_VERSION,
       isLocallyRecorded: false,
       isPrimaryAuthority: true,
       isRemoteAuthority: false,

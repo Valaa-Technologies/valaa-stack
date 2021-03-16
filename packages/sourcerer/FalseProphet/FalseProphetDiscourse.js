@@ -14,7 +14,7 @@ import type Connection from "~/sourcerer/api/Connection";
 import type { ProclaimOptions, ChroniclePropheciesRequest, SourceryOptions, ProphecyEventResult }
     from "~/sourcerer/api/types";
 
-import EVENT_VERSION from "~/sourcerer/tools/EVENT_VERSION";
+import SOURCERER_EVENT_VERSION from "~/sourcerer/EVENT_VERSION";
 
 import { initializeAspects, obtainAspect, tryAspect } from "~/sourcerer/tools/EventAspects";
 import createVRID0Dot2, { upgradeVRIDTo0Dot2, createChronicleRootVRID0Dot2 }
@@ -122,7 +122,7 @@ export default class FalseProphetDiscourse extends Discourse {
 
   _universalizeEvent (event: EventBase, chronicleURI: ?string): EventBase {
     _universalizeAction(event, this, chronicleURI);
-    const ret = initializeAspects(event, { version: EVENT_VERSION });
+    const ret = initializeAspects(event, { version: SOURCERER_EVENT_VERSION });
     if (!ret.meta) ret.meta = {};
     // This communicates with @valos/raem reducers somewhat awkwardly.
     ret.meta.isBeingUniversalized = true;

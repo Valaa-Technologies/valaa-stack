@@ -9,7 +9,12 @@ export const valosheath = require("~/gateway-api/valosheath").default;
 
 export default valosheath.exportSpindle({ name: "@valos/sourcerer", ContentAPI, schemeModules });
 
-export {                   default as EVENT_VERSION } from "./tools/EVENT_VERSION";
+export {
+                           default as SOURCERER_EVENT_VERSION,
+} from "./tools/event-version-0.2/EVENT_VERSION";
+export {
+                           default as FUTURE_EVENT_VERSION,
+} from "./tools/event-version-0.3/EVENT_VERSION";
 
 export {
                                       ContentAPI,
